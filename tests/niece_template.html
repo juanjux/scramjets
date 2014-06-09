@@ -1,0 +1,52 @@
+{% extends "son_template.html" %}
+
+{% block heredada_nieta1 %}CORRECTO. Soy la nieta.{% endblock %}
+{% block heredada_nieta2 %}CORRECTO. Soy la nieta.{% endblock %}
+
+{% block ambas_pero_pon_nieta %}
+    AMBAS_PERO_PON_NIETA: CORRECTO. Soy la nieta y debo reescribir lo de la abuela y madre.
+
+    ANTES testvar|{{testvarfloat}}|DESPUES DE TEXTVAR |{{assocarray1.polompos}}|{{listassoc.0.polompos}}|
+  
+    {%verbatim %}
+    Verbatim, le falta el primer espacio
+
+        {% verbatim%} Verbatim anidado y le falta el segundo espacio {% endverbatim %}
+        {%verbatim%}otro verbatim y le falta todo{%endverbatim%}
+    {% endverbatim %}
+
+    {#segundo comentario #}
+    {# tercer comentario#}
+    {#cuarto comentario#}
+    {# otro comentario #}  
+
+    Antes de comentario de bloque XXX no sale
+    {% comment %}
+        ERROR. Esto está en un comentario de bloque y no debería salir.
+    {% endcomment %}
+{% endblock %}
+ 
+{% block reanidado %} REANIDADO: CORRECTO. Reanidado definido en la nieta {% endblock %}
+
+{% block extrafooter %}
+    EXTRAFOOTER: CORRECTO. extrafooter reescrito en la nieta 
+
+    {% verbatim %}
+    Texto dentro del comando compuesto verbatim
+        {% trans polompos pok cogorcios%}
+    {% endverbatim %}
+
+{% endblock %}
+
+{% block anidadonieta %}
+ANIDADONIETA: Correcto. Soy la nieta
+{% endblock %}
+
+{% block de_hija_a_nieta %}
+    DE_HIJA_A_NIETA: CORRECTO. Soy la nieta, y debo reescribir de_hija_a_nieta. 
+    Además, debería aparecer en mayúsculas.
+{% endblock %}
+
+{% block hija_nieta2 %}
+    HIJA_A_NIETA2: soy la nieta (y mayus)
+{% endblock %}

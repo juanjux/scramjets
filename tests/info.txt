@@ -1,0 +1,429 @@
+==> en mergeBlock para: anidado
+Block sin marcas anidado:
+----
+
+CORRECTO, soy la hija.
+    ###blockreanidado###
+    ERROR. Debe redefinirlo la nieta, soy la hija
+    |||blockreanidado|||
+Detras del reanidado
+
+----
+Procesando subbloque encontrado: blockreanidado
+==> en mergeBlock para: blockreanidado
+Block sin marcas blockreanidado:
+----
+ CORRECTO. Reanidado definido en la nieta 
+----
+Resultado final mergeblock para: blockreanidado
+====
+ CORRECTO. Reanidado definido en la nieta 
+====
+Nuevo bloque anidado despues de sustituir blockreanidado
+
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+
+Resultado final mergeblock para: anidado
+====
+
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+
+====
+==> en mergeBlock para: heredada_hija1
+Block sin marcas heredada_hija1:
+----
+
+CORRECTO. Soy la hija1.
+
+----
+Resultado final mergeblock para: heredada_hija1
+====
+
+CORRECTO. Soy la hija1.
+
+====
+==> en mergeBlock para: heredada_nieta2
+Block sin marcas heredada_nieta2:
+----
+CORRECTO. Soy la nieta.
+----
+Resultado final mergeblock para: heredada_nieta2
+====
+CORRECTO. Soy la nieta.
+====
+==> en mergeBlock para: blockreanidado
+XXXXXXXXXXXX blockreanidado ya estaba mergeado
+==> en mergeBlock para: unalinea
+Block sin marcas unalinea:
+----
+ Texto dentro de un block de una linea 
+----
+Resultado final mergeblock para: unalinea
+====
+ Texto dentro de un block de una linea 
+====
+==> en mergeBlock para: heredada_hija2
+Block sin marcas heredada_hija2:
+----
+CORRECTO. Soy la hija1 (bis). 
+----
+Resultado final mergeblock para: heredada_hija2
+====
+CORRECTO. Soy la hija1 (bis). 
+====
+==> en mergeBlock para: ambas_pero_pon_nieta
+Block sin marcas ambas_pero_pon_nieta:
+----
+
+CORRECTO. Soy la nieta y debo reescribir lo de la abuela y madre.
+
+----
+Resultado final mergeblock para: ambas_pero_pon_nieta
+====
+
+CORRECTO. Soy la nieta y debo reescribir lo de la abuela y madre.
+
+====
+==> en mergeBlock para: body
+Block sin marcas body:
+----
+
+    Texto dentro del block body.
+    Puede tener varias líneas.
+    ###anidado### ERROR: Debe redefinirlo la hija |||anidado|||
+    Detrás del block body.
+    Otra línea más.
+    ###unalinea### Texto dentro de un block de una linea |||unalinea|||
+    ###multiuna### Texto empieza después del tag de block
+    Pero termina |||multiuna||| en la siguiente línea.
+    ###heredada_hija1###
+    ERROR. Soy la abuela.
+    |||heredada_hija1|||
+    ###heredada_hija2### ERROR. Soy la abuela |||heredada_hija2|||
+    ###heredada_nieta1### ERROR. Soy la abuela.  |||heredada_nieta1|||
+    ###heredada_nieta2### ERROR. Soy la abuela.  |||heredada_nieta2|||
+    ###ambas_pero_pon_nieta### ERROR. Soy la abuela.  |||ambas_pero_pon_nieta|||
+
+----
+ZZZZZZZZZZZZZZZZ => deberia tenerlo ya hecho
+Procesando subbloque encontrado: anidado
+==> en mergeBlock para: anidado
+Block sin marcas anidado:
+----
+
+CORRECTO, soy la hija.
+    ###blockreanidado###
+    ERROR. Debe redefinirlo la nieta, soy la hija
+    |||blockreanidado|||
+Detras del reanidado
+
+----
+Procesando subbloque encontrado: blockreanidado
+==> en mergeBlock para: blockreanidado
+XXXXXXXXXXXX blockreanidado ya estaba mergeado
+Nuevo bloque anidado despues de sustituir blockreanidado
+
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+
+Resultado final mergeblock para: anidado
+====
+
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+
+====
+Nuevo bloque body despues de sustituir anidado
+
+    Texto dentro del block body.
+    Puede tener varias líneas.
+    
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+|||anidado|||
+    Detrás del block body.
+    Otra línea más.
+    ###unalinea### Texto dentro de un block de una linea |||unalinea|||
+    ###multiuna### Texto empieza después del tag de block
+    Pero termina |||multiuna||| en la siguiente línea.
+    ###heredada_hija1###
+    ERROR. Soy la abuela.
+    |||heredada_hija1|||
+    ###heredada_hija2### ERROR. Soy la abuela |||heredada_hija2|||
+    ###heredada_nieta1### ERROR. Soy la abuela.  |||heredada_nieta1|||
+    ###heredada_nieta2### ERROR. Soy la abuela.  |||heredada_nieta2|||
+    ###ambas_pero_pon_nieta### ERROR. Soy la abuela.  |||ambas_pero_pon_nieta|||
+
+Procesando subbloque encontrado: unalinea
+==> en mergeBlock para: unalinea
+Block sin marcas unalinea:
+----
+ Texto dentro de un block de una linea 
+----
+Resultado final mergeblock para: unalinea
+====
+ Texto dentro de un block de una linea 
+====
+Nuevo bloque body despues de sustituir unalinea
+
+    Texto dentro del block body.
+    Puede tener varias líneas.
+    
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+|||anidado|||
+    Detrás del block body.
+    Otra línea más.
+     Texto dentro de un block de una linea |||unalinea|||
+    ###multiuna### Texto empieza después del tag de block
+    Pero termina |||multiuna||| en la siguiente línea.
+    ###heredada_hija1###
+    ERROR. Soy la abuela.
+    |||heredada_hija1|||
+    ###heredada_hija2### ERROR. Soy la abuela |||heredada_hija2|||
+    ###heredada_nieta1### ERROR. Soy la abuela.  |||heredada_nieta1|||
+    ###heredada_nieta2### ERROR. Soy la abuela.  |||heredada_nieta2|||
+    ###ambas_pero_pon_nieta### ERROR. Soy la abuela.  |||ambas_pero_pon_nieta|||
+
+Procesando subbloque encontrado: multiuna
+==> en mergeBlock para: multiuna
+Block sin marcas multiuna:
+----
+ Texto empieza después del tag de block
+    Pero termina 
+----
+Resultado final mergeblock para: multiuna
+====
+ Texto empieza después del tag de block
+    Pero termina 
+====
+Nuevo bloque body despues de sustituir multiuna
+
+    Texto dentro del block body.
+    Puede tener varias líneas.
+    
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+|||anidado|||
+    Detrás del block body.
+    Otra línea más.
+     Texto dentro de un block de una linea |||unalinea|||
+     Texto empieza después del tag de block
+    Pero termina |||multiuna||| en la siguiente línea.
+    ###heredada_hija1###
+    ERROR. Soy la abuela.
+    |||heredada_hija1|||
+    ###heredada_hija2### ERROR. Soy la abuela |||heredada_hija2|||
+    ###heredada_nieta1### ERROR. Soy la abuela.  |||heredada_nieta1|||
+    ###heredada_nieta2### ERROR. Soy la abuela.  |||heredada_nieta2|||
+    ###ambas_pero_pon_nieta### ERROR. Soy la abuela.  |||ambas_pero_pon_nieta|||
+
+Procesando subbloque encontrado: heredada_hija1
+==> en mergeBlock para: heredada_hija1
+Block sin marcas heredada_hija1:
+----
+
+CORRECTO. Soy la hija1.
+
+----
+Resultado final mergeblock para: heredada_hija1
+====
+
+CORRECTO. Soy la hija1.
+
+====
+Nuevo bloque body despues de sustituir heredada_hija1
+
+    Texto dentro del block body.
+    Puede tener varias líneas.
+    
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+|||anidado|||
+    Detrás del block body.
+    Otra línea más.
+     Texto dentro de un block de una linea |||unalinea|||
+     Texto empieza después del tag de block
+    Pero termina |||multiuna||| en la siguiente línea.
+    
+CORRECTO. Soy la hija1.
+|||heredada_hija1|||
+    ###heredada_hija2### ERROR. Soy la abuela |||heredada_hija2|||
+    ###heredada_nieta1### ERROR. Soy la abuela.  |||heredada_nieta1|||
+    ###heredada_nieta2### ERROR. Soy la abuela.  |||heredada_nieta2|||
+    ###ambas_pero_pon_nieta### ERROR. Soy la abuela.  |||ambas_pero_pon_nieta|||
+
+Procesando subbloque encontrado: heredada_hija2
+==> en mergeBlock para: heredada_hija2
+Block sin marcas heredada_hija2:
+----
+CORRECTO. Soy la hija1 (bis). 
+----
+Resultado final mergeblock para: heredada_hija2
+====
+CORRECTO. Soy la hija1 (bis). 
+====
+Nuevo bloque body despues de sustituir heredada_hija2
+
+    Texto dentro del block body.
+    Puede tener varias líneas.
+    
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+|||anidado|||
+    Detrás del block body.
+    Otra línea más.
+     Texto dentro de un block de una linea |||unalinea|||
+     Texto empieza después del tag de block
+    Pero termina |||multiuna||| en la siguiente línea.
+    
+CORRECTO. Soy la hija1.
+|||heredada_hija1|||
+    CORRECTO. Soy la hija1 (bis). |||heredada_hija2|||
+    ###heredada_nieta1### ERROR. Soy la abuela.  |||heredada_nieta1|||
+    ###heredada_nieta2### ERROR. Soy la abuela.  |||heredada_nieta2|||
+    ###ambas_pero_pon_nieta### ERROR. Soy la abuela.  |||ambas_pero_pon_nieta|||
+
+Procesando subbloque encontrado: heredada_nieta1
+==> en mergeBlock para: heredada_nieta1
+Block sin marcas heredada_nieta1:
+----
+CORRECTO. Soy la nieta.
+----
+Resultado final mergeblock para: heredada_nieta1
+====
+CORRECTO. Soy la nieta.
+====
+Nuevo bloque body despues de sustituir heredada_nieta1
+
+    Texto dentro del block body.
+    Puede tener varias líneas.
+    
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+|||anidado|||
+    Detrás del block body.
+    Otra línea más.
+     Texto dentro de un block de una linea |||unalinea|||
+     Texto empieza después del tag de block
+    Pero termina |||multiuna||| en la siguiente línea.
+    
+CORRECTO. Soy la hija1.
+|||heredada_hija1|||
+    CORRECTO. Soy la hija1 (bis). |||heredada_hija2|||
+    CORRECTO. Soy la nieta.|||heredada_nieta1|||
+    ###heredada_nieta2### ERROR. Soy la abuela.  |||heredada_nieta2|||
+    ###ambas_pero_pon_nieta### ERROR. Soy la abuela.  |||ambas_pero_pon_nieta|||
+
+Procesando subbloque encontrado: heredada_nieta2
+==> en mergeBlock para: heredada_nieta2
+Block sin marcas heredada_nieta2:
+----
+CORRECTO. Soy la nieta.
+----
+Resultado final mergeblock para: heredada_nieta2
+====
+CORRECTO. Soy la nieta.
+====
+Nuevo bloque body despues de sustituir heredada_nieta2
+
+    Texto dentro del block body.
+    Puede tener varias líneas.
+    
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+|||anidado|||
+    Detrás del block body.
+    Otra línea más.
+     Texto dentro de un block de una linea |||unalinea|||
+     Texto empieza después del tag de block
+    Pero termina |||multiuna||| en la siguiente línea.
+    
+CORRECTO. Soy la hija1.
+|||heredada_hija1|||
+    CORRECTO. Soy la hija1 (bis). |||heredada_hija2|||
+    CORRECTO. Soy la nieta.|||heredada_nieta1|||
+    CORRECTO. Soy la nieta.|||heredada_nieta2|||
+    ###ambas_pero_pon_nieta### ERROR. Soy la abuela.  |||ambas_pero_pon_nieta|||
+
+Procesando subbloque encontrado: ambas_pero_pon_nieta
+==> en mergeBlock para: ambas_pero_pon_nieta
+Block sin marcas ambas_pero_pon_nieta:
+----
+
+CORRECTO. Soy la nieta y debo reescribir lo de la abuela y madre.
+
+----
+Resultado final mergeblock para: ambas_pero_pon_nieta
+====
+
+CORRECTO. Soy la nieta y debo reescribir lo de la abuela y madre.
+
+====
+Nuevo bloque body despues de sustituir ambas_pero_pon_nieta
+
+    Texto dentro del block body.
+    Puede tener varias líneas.
+    
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+|||anidado|||
+    Detrás del block body.
+    Otra línea más.
+     Texto dentro de un block de una linea |||unalinea|||
+     Texto empieza después del tag de block
+    Pero termina |||multiuna||| en la siguiente línea.
+    
+CORRECTO. Soy la hija1.
+|||heredada_hija1|||
+    CORRECTO. Soy la hija1 (bis). |||heredada_hija2|||
+    CORRECTO. Soy la nieta.|||heredada_nieta1|||
+    CORRECTO. Soy la nieta.|||heredada_nieta2|||
+    
+CORRECTO. Soy la nieta y debo reescribir lo de la abuela y madre.
+|||ambas_pero_pon_nieta|||
+
+Resultado final mergeblock para: body
+====
+
+    Texto dentro del block body.
+    Puede tener varias líneas.
+    
+CORRECTO, soy la hija.
+     CORRECTO. Reanidado definido en la nieta |||blockreanidado|||
+Detras del reanidado
+|||anidado|||
+    Detrás del block body.
+    Otra línea más.
+     Texto dentro de un block de una linea |||unalinea|||
+     Texto empieza después del tag de block
+    Pero termina |||multiuna||| en la siguiente línea.
+    
+CORRECTO. Soy la hija1.
+|||heredada_hija1|||
+    CORRECTO. Soy la hija1 (bis). |||heredada_hija2|||
+    CORRECTO. Soy la nieta.|||heredada_nieta1|||
+    CORRECTO. Soy la nieta.|||heredada_nieta2|||
+    
+CORRECTO. Soy la nieta y debo reescribir lo de la abuela y madre.
+|||ambas_pero_pon_nieta|||
+
+====
+==> en mergeBlock para: multiuna
+XXXXXXXXXXXX multiuna ya estaba mergeado
+==> en mergeBlock para: heredada_nieta1
+XXXXXXXXXXXX heredada_nieta1 ya estaba mergeado

@@ -1,0 +1,35 @@
+{% extends "base_template.html" %}
+
+{% block extrahead %}
+CORRECTO. extrahead reescrito en la hija
+{% endblock %}
+
+{% block anidado %}
+    ANIDADO: CORRECTO, soy la hija.
+        {% block reanidado %}
+            REANIDADO: ERROR. Debe redefinirlo la nieta, soy la hija
+        {% endblock %}
+    Detras del reanidado
+{% endblock %}
+
+
+{% block heredada_hija1 %}
+HEREDADA_HIJA1: CORRECTO. Soy la hija1.
+   {% toupper %}
+        {% block de_hija_a_nieta %}
+            DE_HIJA_A_NIETA: ERROR. Esto deberia aparecer en la nieta, soy la hija
+        {% endblock %}
+
+        {% block hija_nieta2 %}
+            HIJA_NIETA2: ERROR, soy la hija
+        {% endblock %}
+        TESTVARSTRING EN LA HIJA (debe estar en mayusculas): {{testvarstring}}
+    {% endtoupper %}
+    TESTVARFLOAT EN LA HIJA: {{testvarfloat}}
+{% endblock %}
+
+{% block heredada_hija2 %}HEREDADA_HIJA2: CORRECTO. Soy la hija. {% endblock %}
+
+{% block ambas_pero_pon_nieta %}
+    ERROR. Lo de este block lo tiene que poner la nieta. Yo soy la hija
+{% endblock %}

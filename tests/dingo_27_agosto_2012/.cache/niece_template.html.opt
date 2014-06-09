@@ -1,0 +1,98 @@
+<html>
+<head>
+
+    Texto dentro del head en la abuela
+    
+CORRECTO. extrahead reescrito en la hija
+
+
+</head>
+<body>
+
+      Texto dentro del block body en la abuela.
+      Puede tener varias lineas.
+        ANIDADO: CORRECTO, soy la hija.
+        
+ REANIDADO: CORRECTO. Reanidado definido en la nieta 
+    Detras del reanidado
+
+    ANIDADONIETA: Correcto. Soy la nieta
+
+    Detras del block body.
+    Otra linea mas.
+     Texto dentro de un block de una linea (abuela)
+     Texto empieza después del tag de block
+    Pero termina  en la siguiente linea.
+    
+HEREDADA_HIJA1: CORRECTO. Soy la hija1.
+   {% toupper %}
+        
+    DE_HIJA_A_NIETA: CORRECTO. Soy la nieta, y debo reescribir de_hija_a_nieta. 
+    Además, debería aparecer en mayúsculas.
+
+        
+    HIJA_A_NIETA2: soy la nieta (y mayus)
+
+        TESTVARSTRING EN LA HIJA (debe estar en mayusculas): {testvarstring}}
+    {% endtoupper %}
+    TESTVARFLOAT EN LA HIJA: {testvarfloat}}
+
+    HEREDADA_HIJA2: CORRECTO. Soy la hija. 
+    CORRECTO. Soy la nieta.
+    CORRECTO. Soy la nieta.
+        AMBAS_PERO_PON_NIETA: CORRECTO. Soy la nieta y debo reescribir lo de la abuela y madre.
+    ANTES testvar|{testvarfloat}}|DESPUES DE TEXTVAR |{testvarstring}}|{listassoc.0."polompos"}}|
+   
+    {%verbatim %} 
+        Verbatim de tres lineas.
+        Una
+        Dos
+        Y tres
+    {% endverbatim %} 
+    {%verbatim %}
+        Verbatim, le falta el primer espacio
+        Tiene varias lineas este Verbatim.
+        Ya ves.  
+        {% verbatim%} Verbatim anidado y le falta el segundo espacio {% endverbatim %}
+            {%verbatim%}otro verbatim y le falta todo{%endverbatim%}
+    {% endverbatim %}
+    
+    
+    
+    
+      
+    Antes de comentario de bloque
+    {% comment %}
+        ERROR. Dentro de un comentario de bloque NO debería salir
+    {% endcomment %}
+    Después de comentario de bloque
+    Antes comentariobloque 1linea{%comment%}ERROR, NO SALGO{%endcomment%}Despues comentariobloque 1linea.
+
+    TESTVARFLOAT EN LA MADRE: {testvarfloat}}
+
+[Justo despues del body]
+
+    Texto del block footer en la abuela
+    
+    EXTRAFOOTER: CORRECTO. extrafooter reescrito en la nieta 
+    {% verbatim %}
+    Texto dentro del comando compuesto verbatim
+        {% trans polompos pok cogorcios%}
+    {% endverbatim %}  
+    ANTES DE REPEAT 
+    {% repeat 3 i %} 
+        Esto se tiene que repetir tres veces. Esta es la numero {i}}
+    {% endrepeat %} 
+    DESPUES DE REPEAT
+ 
+    ANTES DE FOR, elemento a iterar: {listliststring}}
+    {% for i in listliststring %}
+        En el bucle for, i vale: {i}}
+        {% for j in i %} Bucle interno, j vale: {j}} {% endfor %}
+    {% endfor %}
+    DESPUES FOR
+
+
+
+</body>
+</html>

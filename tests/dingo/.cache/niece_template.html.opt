@@ -1,0 +1,151 @@
+<html>
+<head>
+
+    Texto dentro del head en la abuela
+    
+CORRECTO. extrahead reescrito en la hija
+
+
+</head>
+<body>
+
+      Texto dentro del block body en la abuela.
+      Puede tener varias lineas.
+        ANIDADO: CORRECTO, soy la hija.
+        
+ REANIDADO: CORRECTO. Reanidado definido en la nieta 
+    Detras del reanidado
+
+    ANIDADONIETA: Correcto. Soy la nieta
+
+    Detras del block body.
+    Otra linea mas.
+     Texto dentro de un block de una linea (abuela)
+     Texto empieza después del tag de block
+    Pero termina  en la siguiente linea.
+    
+HEREDADA_HIJA1: CORRECTO. Soy la hija1.
+   {% toupper %}
+        
+    DE_HIJA_A_NIETA: CORRECTO. Soy la nieta, y debo reescribir de_hija_a_nieta. 
+    Además, debería aparecer en mayúsculas.
+
+        
+    HIJA_A_NIETA2: soy la nieta (y mayus)
+
+        TESTVARSTRING EN LA HIJA (debe estar en mayusculas): {{testvarstring}}
+    {% endtoupper %}
+    TESTVARFLOAT EN LA HIJA: {{testvarfloat}}
+
+    HEREDADA_HIJA2: CORRECTO. Soy la hija. 
+    CORRECTO. Soy la nieta.
+    CORRECTO. Soy la nieta.
+        AMBAS_PERO_PON_NIETA: CORRECTO. Soy la nieta y debo reescribir lo de la abuela y madre.
+    ANTES testvar|{{testvarfloat}}|DESPUES DE TEXTVAR |{{testvarstring}}|{{listassoc.0."polompos"}}|
+   
+    {%verbatim %} 
+        Verbatim de tres lineas.
+        Una
+        Dos
+        Y tres
+    {% endverbatim %} 
+    {%verbatim %}
+        Verbatim, le falta el primer espacio
+        Tiene varias lineas este Verbatim.
+        Ya ves.  
+        {% verbatim%} Verbatim anidado y le falta el segundo espacio {% endverbatim %}
+            {%verbatim%}otro verbatim y le falta todo{%endverbatim%}
+    {% endverbatim %}
+    
+     
+     
+    
+       
+  
+    Antes de comentario de bloque
+    {% comment %}
+        ERROR. Dentro de un comentario de bloque NO debería salir
+    {% endcomment %}
+    Después de comentario de bloque
+    Antes comentariobloque 1linea{%comment%}ERROR, NO SALGO{%endcomment%}Despues comentariobloque 1linea.
+
+    TESTVARFLOAT EN LA MADRE: {{testvarfloat}}
+
+[Justo despues del body]
+
+    Texto del block footer en la abuela
+    
+    EXTRAFOOTER: CORRECTO. extrafooter reescrito en la nieta 
+    {% verbatim %}
+    Texto dentro del comando compuesto verbatim
+    {% endverbatim %}  
+    ANTES DE REPEAT 
+    {% repeat 3 i %} 
+        Esto se tiene que repetir tres veces. Esta es la numero {{i}}
+    {% endrepeat %} 
+    DESPUES DE REPEAT
+    Probando cycle fuera de bucles:
+    Uno: {% cycle cycle1 cycle2 cycle3 "polompos" 1234 %} 
+    Dos: {% cycle cycle1 cycle2 cycle3 "polompos" 1234 %}
+    Tres: {% cycle cycle1 cycle2 cycle3 "polompos" 1234 %}
+    Uno: {% cycle cycle1 cycle2 cycle3 "polompos" 1234 %}
+    Dos: {% cycle cycle1 cycle2 cycle3 "polompos" 1234 %}
+ 
+    ANTES DE FOR, elemento a iterar: {{listliststring}}
+    {% for i in listliststring %}
+        En el bucle for, i vale: {{i}}
+        Prueba de cycle:  {% cycle cycle1 cycle2 cycle3 "polompos" 1234 %}
+        {% for j in i %} 
+            Bucle interno, j vale: {{j}} 
+            Prueba de cycle bucle interno: {% cycle cycle1 cycle2 cycle3 "polompos" 1234 %}
+        {% endfor %}
+    {% endfor %}
+    DESPUES FOR
+    {% comment %}
+        ANTES DEBUG
+            {% debug %}
+        DESPUES DEBUG
+    {% endcomment %}
+    Antes de incluir plantilla
+    {% include included_template.html %}
+    Antes de SSI
+        
+    ANTES DE WITH, ALIAS VALE: |{{alias}}|
+    {% with alias=listassoc.0."polompos" %}
+        DENTRO DE WITH, ALIAS VALE: |{{alias}}| 
+        DEBAJO DE WITH, CON VARIOS SALTOS DE LINEA
+    {% endwith %} 
+    FUERA DE WITH, ALIAS VALE: |{{alias}}|
+    ANTES DE NOW
+    {% now "XXX|A|a|b|c|d|D|e|T|E|f|F|g|G|h|H|i|j|l|m|M|n|p|XXX" %}
+    {% now "\r|r|s|t|U|w|W|y|Y|z|" %}
+    FIRSTOF, NINGUNA EXISTE: |{% firstof noexisto1 noexisto2 noexisto3 %}|
+    FIRSTOF, EXISTE LA SEGUNDA Y TERCERA: |{% firstof noexisto1 assocarray1."pok" testvarint %}|
+    NOW SIN NA: {% now %}
+    {% spaceless %}
+        <polompos>  sdfsd  sdfdsf   sdfdsf   sdfdsfs   </polompos>  dsfds   gdfgfd  dgd fgdgf
+        dfgfdfgdf fgd <pok>  </pok>    <otrotag/>     <yunomas>
+        <yotro/>
+    {% endspaceless %}
+    ---PRUEBA AUTOESCAPE:
+    {% autoescape off %}
+        {{testvarstring}}
+    {% endautoescape %}
+    ---PRUEBA VERBATIM:
+    {% verbatim %}
+        antes anidado
+        {{testvarstring}}
+        {% verbatillo %}
+            dentro anidado
+        {% endverbatillo %}
+            despues anidado
+        {% endnarices %}
+        {{testvarstring}}
+    {% endverbatim %}
+    Fuera de Verbatines: {{testvarstring}}
+  
+
+
+
+</body>
+</html>

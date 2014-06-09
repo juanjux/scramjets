@@ -1,0 +1,52 @@
+<html>
+<head>
+{%  block head %}
+    Texto dentro del head en la abuela
+    {% block extrahead %}
+    {% endblock %}
+{% endblock %}
+</head>
+<body>
+
+{% block  body %}
+      Texto dentro del block body en la abuela.
+      Puede tener varias lineas.
+
+    {% block anidado%} ANIDADO ERROR: Debe redefinirlo la hija {% endblock %}
+    {% block anidadonieta %}ANIDADONIEETA ERROR: Debe redefinirlo la nieta {% endblock %}
+
+    Detras del block body.
+    Otra linea mas.
+
+    {% block unalinea %} Texto dentro de un block de una linea (abuela){% endblock %}
+
+    {% block multiuna %} Texto empieza después del tag de block
+    Pero termina {% endblock %} en la siguiente linea.
+
+    {% block heredada_hija1 %}
+    ERROR. Soy la abuela.
+    {% endblock %}
+
+    {% block heredada_hija2 %} ERROR. Soy la abuela {% endblock %}
+
+    {% block heredada_nieta1 %} ERROR. Soy la abuela.  {% endblock %}
+    {% block heredada_nieta2 %} ERROR. Soy la abuela.  {% endblock %}
+
+    {% block ambas_pero_pon_nieta %} ERROR. Soy la abuela.  {% endblock %}
+    TESTVARFLOAT EN LA MADRE: {{testvarfloat}}
+{% endblock %}
+
+[Justo despues del body]
+
+{% block footer %}
+    Texto del block footer en la abuela
+    {% block extrafooter %}
+        ERROR. Reescrita en la nieta
+    {% endblock %}
+{% endblock %}
+
+{%block vacio%}{%endblock%}
+
+
+</body>
+</html>

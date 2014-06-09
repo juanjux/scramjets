@@ -1,0 +1,17 @@
+· Formularios
+· Sesiones (mirar la implementación de vibe.d)
+· ORM (modelos) => mapeado estático a columnas, de momento, o pensar como se puede hacer (no va a ser como en Python :()
+· Plantillas reales => es un pifostio. Usar alguna en C, esperar a que salga alguna o migrar http://www.gitorious.org/grantlee/
+· RENOMBRAR "core", soy imbécil, ya hay un package core en la librería estándar de D
+· Funciones para leer de Settings de forma menos engorrosa
+· 404 y 500 configurables por el usuario
+· Mirar appender y format en vez de tantas concatenaciones. Además hay un objeto de buffer de cadena o algo así.
+· Añadir los copyrights y la licencia (BSD? Apache? Mit?)
+· Añadir más unittests
+· Las pilas incluidas (subida de ficheros, autentificacion, cache, flatpages, jsonrpc, email,
+                       i18n, logging, messages, redirects, sesiones, signals, ficheros estaticos,
+                       RSS, etc...)
+
+Plantillas:
+
+http://stackoverflow.com/questions/355650/c-html-template-framework-templatizing-library-html-generator-library
